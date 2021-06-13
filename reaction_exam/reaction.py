@@ -1,3 +1,4 @@
+        #client와 bot은 직접 구분하셔야 합니다
         emojis = ['1️⃣', '2️⃣', '3️⃣']  #이모지 리스트
         
         
@@ -12,7 +13,7 @@
 
         while True: #반복한다 == 이모지를 계속 확인한다
             try:
-                reaction, user = await self.bot.wait_for('reaction_add', check=checks, timeout=30)  #이모지 반응을 기다린다. check 함수를 확인하고 30초 카운트다운을 한다
+                reaction, user = await bot.wait_for('reaction_add', check=checks, timeout=30)  #이모지 반응을 기다린다. check 함수를 확인하고 30초 카운트다운을 한다
             except asyncio.TimeoutError:
                 return await msg.delete()   #30초가 지나면 봇이 보낸 메세지를 지우고 명령어 프로세스를 종료한다
                 
